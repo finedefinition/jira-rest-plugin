@@ -13,15 +13,21 @@ Path to Maven in MacOS
 
 usr/local/Cellar/atlassian-plugin-sdk/8.2.7/libexec/apache-maven-3.5.4 <br>
 
-![alt text](src/main/resources/images/maven_settings.png)
+![alt text](images/maven_settings.png)
 
-You need to install several plugin modules:
+Create template Jira plugin from SDK:
+
+#### `atlas-create-jira-plugin`
+
+You also need to install several plugin modules:
 1. Web section / 30
 2. Web item / 25
 3. Servlet / 21
 4. REST plugin module / 14
 
 #### `atlas-create-jira-plugin-module`
+
+
 
 
 Full documentation is always available at:

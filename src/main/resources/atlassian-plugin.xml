@@ -1,24 +1,32 @@
-<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
-    <plugin-info>
-        <description>${project.description}</description>
-        <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
-        <param name="plugin-icon">images/pluginIcon.png</param>
-        <param name="plugin-logo">images/pluginLogo.png</param>
-    </plugin-info>
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="jira-rest-plugin"/>
-    
-    <!-- add our web resources -->
-    <web-resource key="jira-rest-plugin-resources" name="jira-rest-plugin Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
-        <resource type="download" name="jira-rest-plugin.css" location="/css/jira-rest-plugin.css"/>
-        <resource type="download" name="jira-rest-plugin.js" location="/js/jira-rest-plugin.js"/>
-        <resource type="download" name="images/" location="/images"/>
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="jira-rest-plugin"/>  
+  <!-- add our web resources -->  
+  <web-resource key="jira-rest-plugin-resources" name="jira-rest-plugin Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="jira-rest-plugin.css" location="/css/jira-rest-plugin.css"/>  
+    <resource type="download" name="jira-rest-plugin.js" location="/js/jira-rest-plugin.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>jira-rest-plugin</context> 
+  </web-resource>
 
-        <context>jira-rest-plugin</context>
-    </web-resource>
-    
+  <web-section name="Web section"  key="web_section"
+               location="admin_plugins_menu" weight="1000">
+    <label key="CUSTOM"/>
+  </web-section>
+
+  <web-item name="Web item REST application"  key="rest_app"
+            section="admin_plugins_menu/web_section" weight="1000">
+  <label key="REST APP"/>
+  <link linkId="configuration-link">/plugins/servlet/app</link>
+  </web-item>
 </atlassian-plugin>
