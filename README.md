@@ -27,7 +27,7 @@ You also need to install several plugin modules:
 
 #### `atlas-create-jira-plugin-module`
 
-
+Web section won't appear on UI until you define at least one web-item in the section.
 
 
 Full documentation is always available at:
